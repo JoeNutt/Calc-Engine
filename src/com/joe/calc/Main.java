@@ -7,18 +7,25 @@ public class Main {
 	double doubleValue2 = 50.0d;
 	char charOpcode = 'd';
 	double doubleResult = 0.0d;
-	if(charOpcode == 'a')
+
+	switch (charOpcode){
+		case 'a':
         doubleResult = doubleValue1 + doubleValue2;
-	else if (charOpcode == 's')
+        break;
+		case 's':
         doubleResult = doubleValue1 - doubleValue2;
-	else if (charOpcode == 'm')
+        break;
+		case 'm':
         doubleResult = doubleValue1 * doubleValue2;
-	else if (charOpcode == 'd')
-        doubleResult = doubleValue1 / doubleValue2;
-
-	else doubleResult = 0.0d;
-
+        break;
+		case'd':
+			doubleResult = doubleValue2 != 0 ? doubleValue1 / doubleValue2 : 0.00d;
+			break;
+		default:
+		System.out.println("invalid Opcode"+ charOpcode);
+		doubleResult = 0.0d;
+		break;
+	}
 	System.out.println(doubleResult);
-
     }
 }
